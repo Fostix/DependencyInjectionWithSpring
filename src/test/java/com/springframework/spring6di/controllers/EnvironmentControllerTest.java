@@ -1,18 +1,19 @@
-package com.springframework.spring6di.controllers.i18n;
+package com.springframework.spring6di.controllers;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-@ActiveProfiles("ES")
+@ActiveProfiles({"dev", "EN"})
 @SpringBootTest
-class myi18NControllerTestES {
+public class EnvironmentControllerTest {
+
     @Autowired
-    Myi18NController myi18NController;
+    EnvironmentController controller;
 
     @Test
-    void sayHello() {
-        System.out.println(myi18NController.sayHello());
+    void getEnvironment() {
+        System.out.println(controller.getEnvironment());
     }
 }
